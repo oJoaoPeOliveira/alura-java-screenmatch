@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Filme;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -57,5 +59,19 @@ public class Main {
         episodio.setSerie(lost);
         episodio.setTotalVisiualizacoes(300);
         filtro.filtra(episodio);
+
+        Filme filmeDoPaulo = new Filme();
+        filmeDoPaulo.setNome("Thunderbolts*");
+        filmeDoPaulo.setDuracaoEmMinutos(126);
+        filmeDoPaulo.setAnoLancamento(2025);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDefilmes = new ArrayList<>();
+        listaDefilmes.add(meuFilme);
+        listaDefilmes.add(outroFilme);
+        listaDefilmes.add(filmeDoPaulo);
+        System.out.println("Tamanho da lista: " + listaDefilmes.size());
+        System.out.println("Primeiro filme: " + listaDefilmes.get(0).getNome());
+        System.out.println(listaDefilmes);
     }
 }
